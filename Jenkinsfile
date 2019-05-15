@@ -12,7 +12,7 @@ pipeline {
        stage('Deploy') {
             steps {
               dir ("${ansible_deploy_path}"){
-                       sh(ansible-playbook -i ec2.py file.yaml)
+                       sh(ansible-playbook file.yaml)
                     }
             }
 
