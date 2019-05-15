@@ -20,7 +20,7 @@ pipeline {
     }
     post {
        failure {
-          notifyBuild('FAILURE', 'at', 'sysalerts@knorex.com, xpo_curator@knorex.com')
+          notifyBuild('FAILURE', 'at', 'sysalerts@knorex.com')
        }
     }
 }
