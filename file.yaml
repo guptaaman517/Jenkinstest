@@ -1,0 +1,18 @@
+---
+- hosts: 54.255.235.107
+  gather_facts: no
+  become: yes
+  become_user: ubuntu
+  vars: 
+    - ansible_ssh_common_args: '-o ProxyCommand="ssh -W %h:%p -q aman@54.251.97.141"'
+    - work_path: /data/knorex/bd-content-studio
+
+  tasks: 
+  - name: pull the latest code and build the grunt
+    shell: cd "{{work_path }}" && git pull && grunt build
+
+  - name: Restart the content studio service
+    shell: cd "{{work_path }}" && sudo service content-studio restart
+
+  - name: Check the logs of content-studio app
+    shell: sudo tail -n100 /data/log/content-studio/app.log
