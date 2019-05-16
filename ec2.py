@@ -1,3 +1,4 @@
+cat ec2.py 
 #!/usr/bin/env python
 
 '''
