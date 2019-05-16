@@ -4,7 +4,7 @@
 pipeline {
     agent any
     environment {
-        ansible_deploy_path  = "${env.workspace}/etc/ansible/"
+        ansible_deploy_path  = "${env.workspace}/Users/amangupta/jenkinstest"
     }
 
     stages {
