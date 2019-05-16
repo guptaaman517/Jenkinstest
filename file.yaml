@@ -4,7 +4,6 @@
   become: yes
   become_user: ubuntu
   vars: 
-    - ansible_ssh_common_args: '-o ProxyCommand="ssh -W %h:%p -q aman@54.251.97.141"'
     - work_path: /data/knorex/bd-content-studio
 
   tasks: 
